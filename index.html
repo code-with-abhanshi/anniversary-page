@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAPPY ANNIVERSARY ❤️</title>
+    <style>
+      /* --- GLOBAL RESET & BASE STYLES --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        background: linear-gradient(
+          135deg,
+          #ff9a9e 0%,
+          #fecfef 50%,
+          #ffdde1 100%
+        );
+        overflow-x: hidden;
+        /* Kept primary body color white for HERO section */
+        color: #fff;
+        min-height: 100vh;
+      }
+
+      /* --- HERO SECTION & BACKGROUND EFFECTS --- */
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Subtle background pattern animation */
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.2) 1px,
+          transparent 1px
+        );
+        background-size: 40px 40px;
+        animation: float 20s linear infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(40px, 40px);
+        }
+      }
+
+      /* Cloud and Bird animations (kept for context, but hidden on mobile) */
+      .cloud {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 100px;
+        animation: floatCloud 30s infinite linear;
+      }
+
+      .cloud::before,
+      .cloud::after {
+        content: "";
+        position: absolute;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 100px;
+      }
+
+      .cloud1 {
+        width: 100px;
+        height: 40px;
+        top: 20%;
+        left: -150px;
+        animation-delay: 0s;
+      }
+
+      .cloud1::before {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+        left: 10px;
+      }
+
+      .cloud1::after {
+        width: 60px;
+        height: 40px;
+        top: -15px;
+        right: 10px;
+      }
+
+      .cloud2 {
+        width: 120px;
+        height: 45px;
+        top: 40%;
+        left: -180px;
+        animation-delay: 10s;
+      }
+
+      .cloud2::before {
+        width: 55px;
+        height: 55px;
+        top: -28px;
+        left: 15px;
+      }
+
+      .cloud2::after {
+        width: 65px;
+        height: 45px;
+        top: -18px;
+        right: 15px;
+      }
+
+      .cloud3 {
+        width: 90px;
+        height: 35px;
+        top: 60%;
+        left: -140px;
+        animation-delay: 20s;
+      }
+
+      .cloud3::before {
+        width: 45px;
+        height: 45px;
+        top: -22px;
+        left: 8px;
+      }
+
+      .cloud3::after {
+        width: 50px;
+        height: 35px;
+        top: -12px;
+        right: 8px;
+      }
+
+      @keyframes floatCloud {
+        0% {
+          left: -200px;
+        }
+        100% {
+          left: 110%;
+        }
+      }
+
+      .bird {
+        position: absolute;
+        font-size: 24px;
+        animation: flyBird 25s infinite linear;
+        top: 15%;
+      }
+
+      .bird1 {
+        left: -100px;
+        animation-delay: 0s;
+      }
+
+      .bird2 {
+        left: -100px;
+        animation-delay: 12s;
+        top: 25%;
+      }
+
+      @keyframes flyBird {
+        0% {
+          left: -100px;
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(-20px);
+        }
+        50% {
+          transform: translateY(0px);
+        }
+        75% {
+          transform: translateY(-15px);
+        }
+        100% {
+          left: 110%;
+          transform: translateY(0px);
+        }
+      }
+
+      /* Hero Content & Text Styling */
+      .hero-content {
+        z-index: 1;
+        animation: fadeIn 2s ease-in;
+        padding: 0 10px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        text-shadow: 3px 3px 15px rgba(255, 105, 180, 0.5);
+        color: #fff;
+        animation: glow 2s ease-in-out infinite alternate,
+          pulseText 3s infinite ease-in-out;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 3px 3px 15px rgba(255, 105, 180, 0.5);
+        }
+        to {
+          text-shadow: 3px 3px 30px rgba(255, 105, 180, 0.8);
+        }
+      }
+
+      @keyframes pulseText {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.03);
+        }
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        opacity: 0.95;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Floating Hearts and Butterflies (background decor) */
+      .heart-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 20px;
+        animation: rise 8s infinite ease-in;
+        opacity: 0;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.9;
+        }
+        90% {
+          opacity: 0.9;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .butterfly {
+        position: absolute;
+        font-size: 28px;
+        animation: flyButterfly 15s infinite ease-in-out;
+        opacity: 0;
+      }
+
+      @keyframes flyButterfly {
+        0% {
+          transform: translate(0, 100vh) rotate(0deg);
+          opacity: 0;
+        }
+        5% {
+          opacity: 0.8;
+        }
+        25% {
+          transform: translate(100px, 60vh) rotate(45deg) scaleX(1);
+        }
+        50% {
+          transform: translate(-50px, 30vh) rotate(-30deg) scaleX(-1);
+        }
+        75% {
+          transform: translate(80px, 10vh) rotate(60deg) scaleX(1);
+        }
+        95% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translate(0, -100px) rotate(0deg);
+          opacity: 0;
+        }
+      }
+
+      /* --- NEW: MOM/DAD ANIMATION (Falling Corner Hearts) --- */
+      .corner-animation {
+        position: fixed;
+        width: 150px;
+        height: 150px;
+        z-index: 5;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .top-left {
+        top: 0;
+        left: 0;
+      }
+
+      .bottom-right {
+        bottom: 0;
+        right: 0;
+      }
+
+      .mom-heart,
+      .dad-heart {
+        position: absolute;
+        font-size: 28px;
+        animation: fallAndRotate 6s infinite ease-in;
+        opacity: 0;
+      }
+
+      .mom-heart {
+        color: hotpink;
+      }
+
+      .dad-heart {
+        color: crimson;
+      }
+
+      .top-left .mom-heart {
+        top: -50px;
+        left: 5px;
+      }
+      .top-left .dad-heart {
+        top: -80px;
+        left: 70px;
+        animation-delay: 3s;
+      }
+
+      .bottom-right .mom-heart {
+        bottom: -50px;
+        right: 70px;
+      }
+      .bottom-right .dad-heart {
+        bottom: -80px;
+        right: 5px;
+        animation-delay: 3s;
+      }
+
+      @keyframes fallAndRotate {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+        5% {
+          opacity: 1;
+        }
+        95% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(200px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+      /* --- TIMELINE SECTION --- */
+      .timeline {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 20px;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.4),
+          rgba(255, 192, 203, 0.8),
+          rgba(255, 255, 255, 0.4)
+        );
+      }
+
+      .timeline-item {
+        margin-bottom: 80px;
+        position: relative;
+        animation: slideIn 0.6s ease-out;
+      }
+
+      /* Intersection Observer will handle the reveal, but keeping the keyframes */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .timeline-item:nth-child(odd) {
+        padding-right: 50%;
+        padding-left: 0;
+      }
+
+      .timeline-item:nth-child(even) {
+        padding-left: 50%;
+        padding-right: 0;
+      }
+
+      .timeline-content {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(15px);
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* UPDATED: Set a darker base text color for better contrast */
+        color: #333333;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 12px 48px rgba(255, 105, 180, 0.5);
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+        border-radius: 50%;
+        border: 4px solid #fff;
+        box-shadow: 0 0 25px rgba(255, 182, 193, 0.9);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 25px rgba(255, 182, 193, 0.9);
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(255, 182, 193, 1);
+          transform: translateX(-50%) scale(1.1);
+        }
+      }
+
+      .year {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, #ff6b9d, #c44569);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Media Containers */
+      .media-container {
+        width: 100%;
+        margin: 20px 0;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .media-container img,
+      .media-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        max-width: 100%;
+      }
+
+      .media-vertical {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        /* UPDATED: Set a darker, readable color */
+        color: #333333;
+        /* ADJUSTED: Lighten the text shadow slightly since the background is light */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
+
+      .scroll-hint {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        font-size: 2rem;
+        opacity: 0.8;
+        z-index: 1;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-20px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+      }
+
+      /* Final Message */
+      .final-message {
+        text-align: center;
+        padding: 100px 20px;
+        font-size: 1.5rem;
+        line-height: 2;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(15px);
+        margin: 50px 20px;
+        border-radius: 30px;
+        animation: fadeIn 2s ease-in;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3);
+        /* UPDATED: Darker color for message body */
+        color: #1a1a1a;
+      }
+
+      .final-message h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #ff6b9d, #c44569);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .star {
+        position: absolute;
+        font-size: 16px;
+        animation: twinkle 3s infinite ease-in-out;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.3);
+        }
+      }
+
+      /* --- RESPONSIVENESS (Mobile-Friendly) --- */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .subtitle {
+          font-size: 1.1rem;
+        }
+
+        /* Adjust timeline for single column on mobile */
+        .timeline::before {
+          left: 20px;
+        }
+
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+          padding-left: 60px; /* Space for the timeline dot */
+          padding-right: 0;
+        }
+
+        .timeline-dot {
+          left: 20px;
+        }
+
+        .year {
+          font-size: 1.5rem;
+        }
+
+        /* Hide large, complex animations on smaller screens for performance */
+        .cloud,
+        .bird {
+          display: none;
+        }
+
+        .corner-animation {
+          width: 80px;
+          height: 80px;
+        }
+
+        .top-left .mom-heart,
+        .top-left .dad-heart,
+        .bottom-right .mom-heart,
+        .bottom-right .dad-heart {
+          font-size: 18px;
+        }
+
+        .media-vertical {
+          max-width: 100%; /* Allow vertical media to fill container */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart-container" id="hearts"></div>
+    <div class="heart-container" id="butterflies"></div>
+
+    <div class="corner-animation top-left">
+      <div class="mom-heart">MUMMA</div>
+      <div class="dad-heart">PAPA</div>
+    </div>
+    <div class="corner-animation bottom-right">
+      <div class="mom-heart">MUMMA</div>
+      <div class="dad-heart">PAPA</div>
+    </div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="bird bird1">🕊️</div>
+    <div class="bird bird2">🕊️</div>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h1>💕 HAPPY 30TH ANNIVERSARY 💕</h1>
+        <p class="subtitle">
+          Jaha Papa ka scorecard Mummy ke hisaab se: 0/10 (zero-cutus)!
+        </p>
+        <p class="subtitle">Happy Anniversary Mumma & Papa!</p>
+      </div>
+      <div class="scroll-hint">↓</div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="year">The Beginning 💑</div>
+          <div class="media-container media-vertical">
+            <img src="photo1.jpg" alt="First Meeting" />
+          </div>
+          <p class="description">
+            Where it all started... Two hearts found each other and began a
+            beautiful journey together. The first spark, the first smile, the
+            beginning of forever.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="year">The Wedding Day 💍</div>
+          <div class="media-container media-horizontal">
+            <video id="video1" controls preload="none" muted loop>
+              <source src="video1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="description">
+            The day you promised to love each other forever. Surrounded by
+            family and friends, you started your adventure together as husband
+            and wife.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="year">Growing Together 🏠</div>
+          <div class="media-container media-vertical">
+            <img src="photo2.jpg" alt="Wedding Photo" />
+          </div>
+          <p class="description">
+            Building a home, creating memories, and filling every moment with
+            love and laughter. Every challenge made you stronger, every joy made
+            you closer.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="year">Family Grows 👨‍👩‍👧‍👦</div>
+          <div class="media-container media-horizontal">
+            <img src="photo3.jpg" alt="Family Photo" />
+          </div>
+          <p class="description">
+            The blessing of children brought new meaning to your love. We're so
+            grateful to be part of this beautiful family you created together.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="year">Adventures Together ✈️</div>
+          <div class="media-container media-horizontal">
+            <img src="photo4.jpg" alt="Travel Photo" />
+          </div>
+          <p class="description">
+            From quiet moments at home to exciting adventures, every experience
+            has been better because you shared it together as a family.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="year">Today & Forever 💕</div>
+          <div class="media-container media-vertical">
+            <video id="video2" controls preload="none" muted loop>
+              <source src="video2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="description">
+            Your love continues to inspire us every day. Thank you for showing
+            us what true love looks like. Here's to many more beautiful years
+            together!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="final-message">
+      <h2>Happy Anniversary! 🎉</h2>
+      <p>
+        Thank you for being the best parents anyone could ask for.<br />
+        Your love story is our favorite story.<br />
+        May your love continue to grow stronger with each passing day.<br /><br />
+        <strong>With all our love</strong><br />
+      </p>
+    </div>
+
+    <script>
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        const hearts = ["❤️", "💕", "💖", "💗", "💓", "💝"];
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.animationDuration = Math.random() * 3 + 5 + "s";
+        heart.style.animationDelay = Math.random() * 2 + "s";
+        document.getElementById("hearts").appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 8000);
+      }
+
+      function createButterfly() {
+        const butterfly = document.createElement("div");
+        butterfly.classList.add("butterfly");
+        butterfly.innerHTML = "🦋";
+        butterfly.style.left = Math.random() * 100 + "%";
+        butterfly.style.animationDuration = Math.random() * 5 + 10 + "s";
+        butterfly.style.animationDelay = Math.random() * 3 + "s";
+        document.getElementById("butterflies").appendChild(butterfly);
+
+        setTimeout(() => {
+          butterfly.remove();
+        }, 15000);
+      }
+
+      function createStars() {
+        for (let i = 0; i < 20; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          star.innerHTML = "✨";
+          star.style.left = Math.random() * 100 + "%";
+          star.style.top = Math.random() * 100 + "%";
+          star.style.animationDelay = Math.random() * 3 + "s";
+          document.querySelector(".hero").appendChild(star);
+        }
+      }
+
+      setInterval(createHeart, 800);
+      setInterval(createButterfly, 3000);
+      createStars();
+
+      // --- Intersection Observer for Scroll Animations ---
+      const observerOptions = {
+        root: null, // viewport
+        rootMargin: "0px",
+        threshold: 0.1, // Trigger when 10% of the item is visible
+      };
+
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reveal timeline item
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+            // Handle video playback
+            const video = entry.target.querySelector("video");
+            if (video) {
+              // Only attempt to play if it's visible
+              video.play().catch((error) => {
+                // Autoplay policy restriction often prevents unmuted playback
+                console.log("Autoplay failed:", error.message);
+              });
+            }
+          } else {
+            // Handle video pause when it leaves view
+            const video = entry.target.querySelector("video");
+            if (video) {
+              video.pause();
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Initial setup and observation for timeline items
+      document.querySelectorAll(".timeline-item").forEach((item) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(50px)";
+        item.style.transition = "all 0.6s ease-out";
+        scrollObserver.observe(item);
+      });
+    </script>
+  </body>
+</html>
